@@ -1,0 +1,9 @@
+{
+    "name": "ulysse/lyon-php-todo-objet",
+    "autoload": {
+        "psr-4": {
+            "Todo\\": "src/"
+        }
+    },
+    "require": {}
+}
