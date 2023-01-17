@@ -58,6 +58,16 @@ ob_start();
                 </form>
                 <span class="error"><?php echo error("nameTask");?></span>
             </div>
+
+            <div class="blockTask">
+                <?php
+                foreach($todo->tasks() as $key => $task){
+                ?>
+                <!-- task here -->
+                <?php
+                }
+                ?>
+            </div>
        </div>
     </div>
 </section>

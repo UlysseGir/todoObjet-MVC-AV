@@ -12,25 +12,25 @@ class TaskManager {
         $this->bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
-    // public function find($name, $userId)
-    // {
-    //     $stmt = $this->bdd->prepare("SELECT * FROM List WHERE name = ? AND user_id = ?");
-    //     $stmt->execute(array(
-    //         $name,
-    //         $userId
-    //     ));
-    //     $stmt->setFetchMode(\PDO::FETCH_CLASS,"Todo\Models\Todo");
+    public function find($name, $listId)
+    {
+        $stmt = $this->bdd->prepare("SELECT * FROM task WHERE name = ? AND list_id = ?");
+        $stmt->execute(array(
+            $name,
+            $listId
+        ));
+        $stmt->setFetchMode(\PDO::FETCH_CLASS,"Todo\Models\Todo");
 
-    //     return $stmt->fetch();
-    // }
+        return $stmt->fetch();
+    }
 
-    // public function store() {
-    //     $stmt = $this->bdd->prepare("INSERT INTO List(name, user_id) VALUES (?, ?)");
-    //     $stmt->execute(array(
-    //         $_POST["name"],
-    //         $_SESSION["user"]["id"]
-    //     ));
-    // }
+    public function store() {
+        $stmt = $this->bdd->prepare("INSERT INTO task(name, list_id) VALUES (?, ?)");
+        $stmt->execute(array(
+            $_POST["nameTask"],
+            $_POST["list_id"]
+        ));
+    }
 
     // public function update($slug) {
     //     $stmt = $this->bdd->prepare("UPDATE List SET name = ? WHERE name = ? AND user_id = ?");
