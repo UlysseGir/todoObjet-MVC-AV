@@ -64,6 +64,12 @@ ob_start();
                 foreach($todo->tasks() as $key => $task){
                 ?>
                 <!-- task here -->
+                <div class="task">
+                    <div class="nameTask">
+                        <p><?php echo escape($task->getName()); ?></p>
+                    </div>
+                    
+                </div>
                 <?php
                 }
                 ?>
